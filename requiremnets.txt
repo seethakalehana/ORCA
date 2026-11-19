@@ -1,0 +1,14 @@
+
+fastapi
+uvicorn
+openai
+python-dotenv
+numpy
+pandas
+xarray
+netCDF4
+requests
+geopy
+google-genai
+copernicusmarine
+groq
