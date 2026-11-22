@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ORCA - Marine Intelligence</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+
+        <header class="header">
+            <h1>ORCA</h1>
+            <h2>Marine Intelligence Assistant</h2>
+            <p>Explore ocean conditions and preliminary marine risk indicators.</p>
+        </header>
+
+        
+<section class="panel">
+    <h2>Select Analysis Mode</h2>
+
+    <div class="mode-selector">
+        <label class="mode-option">
+            <input type="radio" name="analysisMode" value="marine" checked>
+            <span>
+                🌊 Marine Intelligence
+                <small>Oceans, seas and coastal waters</small>
+            </span>
+        </label>
+
+        <label class="mode-option">
+            <input type="radio" name="analysisMode" value="inland">
+            <span>
+                🌳 Land & Inland Water Intelligence
+                <small>Cities, rivers, lakes and reservoirs</small>
+            </span>
+        </label>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>Choose Your Location</h2>
+
+            <p>Search for a place, use your location, or select a point on the map.</p>
+
+            <form id="searchForm">
+                <label for="place">Search by place name</label>
+
+                <div class="search-row">
+                    <input
+                        type="text"
+                        id="place"
+                        placeholder="Example: Chennai, Bay of Bengal"
+                    >
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+
+            <button type="button" id="locationBtn" class="secondary">
+                Use My Location
+            </button>
+
+            <p class="hint">
+                You can also click on the map to select an ocean location.
+            </p>
+
+            <div id="map"></div>
+
+            <div class="coordinates">
+                <p><strong>Latitude:</strong> <span id="latitude">Not selected</span></p>
+                <p><strong>Longitude:</strong> <span id="longitude">Not selected</span></p>
+                <p><strong>Selected location:</strong> <span id="selectedPlace">None</span></p>
+            </div>
+
+            <button type="button" id="analyzeBtn" disabled>
+                Analyze Marine Conditions
+            </button>
+        </section>
+
+        <section class="panel" id="resultSection">
+            <h2>Marine Analysis Dashboard</h2>
+
+            <p id="status">Select a location to begin.</p>
+
+            <div id="results" hidden>
+                <div class="result-card">
+                    <h3>Ocean Conditions</h3>
+                    <pre id="conditions"></pre>
+                </div>
+
+                <div class="result-card">
+                    <h3>Risk Assessment</h3>
+                    <pre id="risk"></pre>
+                </div>
+
+                <div class="result-card">
+                    <h3>AI Explanation</h3>
+                    <pre id="explanation"></pre>
+                </div>
+
+                <p id="source"></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>ORCA provides preliminary marine information, not official navigation or safety advice.</p>
+        </footer>
+
+    </main>
+</body>
+</html>

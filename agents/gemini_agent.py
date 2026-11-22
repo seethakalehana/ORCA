@@ -66,3 +66,25 @@ def answer_marine_question(question, ocean_conditions, risk_result):
     """
 
     return ask_gemini(prompt)
+def explain_inland_conditions(weather_conditions, risk_result):
+    prompt = f"""
+    You are ORCA, an Inland Weather Intelligence Assistant.
+
+    Current Weather Conditions:
+    {weather_conditions}
+
+    Preliminary Weather Risk Assessment:
+    {risk_result}
+
+    Explain:
+    1. Current weather conditions.
+    2. Potential weather risk indicators.
+    3. Why these indicators matter.
+    4. Practical precautions users can consider.
+
+    Use simple language.
+    Do not invent measurements.
+    Do not present this as an official weather warning.
+    """
+
+    return ask_gemini(prompt)
