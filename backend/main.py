@@ -43,13 +43,14 @@ def clean_nan_values(data):
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://orca-1-67l3.onrender.com",
         "http://127.0.0.1:5500",
         "http://localhost:5500"
     ],
-    allow_methods=["GET", "POST"],
+    allow_credentials=False,
+    allow_methods=["*"],
     allow_headers=["*"]
 )
-
 
 class QuestionRequest(BaseModel):
     question: str
