@@ -1,5 +1,5 @@
 
-const API = "http://127.0.0.1:8000";
+const API = "https://orca-jnb5.onrender.com";
 
 const placeInput = document.getElementById("place");
 const searchForm = document.getElementById("searchForm");
